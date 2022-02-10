@@ -6,8 +6,10 @@
 trigger:
 - dependabot/maven/junit-junit-4.13.1
 
-pool:
-  vmImage: ubuntu-latest
+- stage: Deploy   
+    pool:Default
+    demands:
+    - agent.name -equals mydockeragent
 
 steps:
 - task: Maven@3
